@@ -1,0 +1,4 @@
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+</script>
