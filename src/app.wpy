@@ -1,4 +1,8 @@
-<style lang="less">
+<style lang='less'>
+page {
+  background-color: #f3f3f3;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -24,14 +28,39 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/venueBooking',
+      'pages/venueIsIntro',
       'pages/home',
-      'pages/index'
+      'pages/activity',
+      'pages/mine'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      navigationBarBackgroundColor: '#FFF',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
+      backgroundColor: '#F3F3F3'
+    },
+    'tabBar': {
+      'list': [{
+        'pagePath': 'pages/home',
+        'text': '场馆预约',
+        iconPath: 'assets/icon_home.png',
+        selectedIconPath: 'assets/icon_home.png'
+      }, {
+        'pagePath': 'pages/activity',
+        'text': '活动列表',
+        iconPath: 'assets/icon_activity.png',
+        selectedIconPath: 'assets/icon_activity.png'
+      }, {
+        'pagePath': 'pages/mine',
+        'text': '个人中心',
+        iconPath: 'assets/icon_mine.png',
+        selectedIconPath: 'assets/icon_mine.png'
+      }],
+      backgroundColor: '#FFF',
+      color: '#666666',
+      selectedColor: '#666666'
     }
   }
 
@@ -39,7 +68,7 @@ export default class extends wepy.app {
     userInfo: null
   }
 
-  constructor () {
+  constructor() {
     super()
     this.use('requestfix')
     this.use('promisify')

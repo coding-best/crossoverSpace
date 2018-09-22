@@ -11,5 +11,56 @@
 	"appid": "wxba08c85f24399bf2",
 	"projectname": "OC-weapp",
 	"miniprogramRoot": "./dist",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "场馆介绍",
+					"pathName": "pages/venueIsIntro",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/home",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动页",
+					"pathName": "pages/activity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "场馆预定",
+					"pathName": "pages/venueBooking",
+					"query": ""
+				}
+			]
+		}
+	}
 }

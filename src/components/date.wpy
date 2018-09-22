@@ -1,0 +1,108 @@
+<template>
+  <view class="date">
+    <block wx:for="{{date}}" wx:key="{{index}}">
+      <view class="date-item {{index == activeDate ? 'activeDate' : ''}}">
+        <text>{{item.week}}</text>
+        <text>{{item.month}}</text>
+        <view class="subscript {{index == activeDate ? 'activeDate' : ''}}"></view>
+      </view>
+    </block>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Date extends wepy.component {
+  props = {
+
+  }
+  data = {
+    activeDate: 0,
+    date: [{
+      week: '今天',
+      month: '06'
+    }, {
+      week: '明天',
+      month: '07'
+    }, {
+      week: '六',
+      month: '08'
+    }, {
+      week: '日',
+      month: '09'
+    }, {
+      week: '一',
+      month: '10'
+    }, {
+      week: '二',
+      month: '11'
+    }, {
+      week: '三',
+      month: '12'
+    }, {
+      week: '四',
+      month: '13'
+    }, {
+      week: '五',
+      month: '14'
+    }]
+  }
+
+  methods = {
+
+  }
+  onLoad() {
+
+  }
+}
+</script>
+<style>
+.date {
+  margin-top: 72rpx;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.date-item {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  width: 44rpx;
+  margin-right: 60rpx;
+}
+
+.date-item:first-child {
+  margin-left: 68rpx;
+}
+
+.date-item > text {
+  color: rgba(0, 0, 0, 1);
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 14rpx;
+}
+
+.date-item > text:first-child {
+  color: #7d7d7d;
+  font-size: 20rpx;
+}
+
+.subscript {
+  width: 48rpx;
+  height: 6rpx;
+  border-radius: 30%;
+  background-color: rgba(255, 32, 31, 1);
+  margin-top: 14rpx;
+  opacity: 0;
+}
+
+.activeDate {
+  opacity: 1;
+}
+
+.activeDate > text {
+  color: rgba(255, 32, 31, 1) !important;
+}
+</style>

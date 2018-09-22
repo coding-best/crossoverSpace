@@ -1,0 +1,223 @@
+<template>
+  <view class="contaniner">
+    <!-- 轮播图 -->
+    <view class="swiper">
+      <swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
+        <block wx:for="{{bannerArr}}" wx:key="index">
+          <swiper-item data-index="{{index}}" @tap="tapImg">
+            <image src="{{item.url}}" class="slide_image" mode="widthFix" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 工作室介绍 -->
+    <view class="introduce">
+      <view class="introduce-title">
+        <text>白尾鹿舞蹈工作室</text>
+      </view>
+      <view class="introduce-content">
+        <text>提供豐富的舞蹈教學，每月超過三百堂多樣化課程、數十種舞蹈風格，最多元的課程選擇、由淺入深漸進...</text>
+        <view class="right"></view>
+      </view>
+      <view class="introduce-address">
+        <view class="icon"></view>
+        <text>科技园 龙珠四路金谷创业园F栋, 1.6 km</text>
+        <view class="right"></view>
+      </view>
+    </view>
+
+    <view class="row"></view>
+
+    <!-- 选择日期 -->
+    <Date />
+
+    <!-- 选择时间段 -->
+    <Time />
+
+    <view class="row"></view>
+
+    <view class="attention">
+      <view class="attention-title">
+        <text>预约须知</text>
+      </view>
+      <view class="attention-content">
+        <text>有效期 2018-05-10至2018-11-10\n\n 适用人数\n 每张团购券最多1人使用\n\n 规则提醒\n 不再与其他优惠同享\n\n 温馨提示\n 如需团购券发票，请您在消费时向商户咨询
+        </text>
+      </view>
+    </view>
+
+    <view class="row"></view>
+
+    <!-- 优惠券 -->
+    <view class="coupons">
+      <view class="coupons-title">
+        <text>优惠券</text>
+        <view class="coupons-title-right">
+          <text>选择优惠券</text>
+          <view class="right"></view>
+        </view>
+      </view>
+      <Coupons />
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import Coupons from '../components/coupons'
+import Date from '../components/date'
+import Time from '../components/time'
+export default class VenueBooking extends wepy.page {
+  config = {
+    navigationBarTitleText: '场馆预约'
+  }
+  components = {
+    Coupons,
+    Date,
+    Time
+  }
+  data = {
+    swiperCurrent: 0, // 轮播图当前下标
+    autoplay: true,
+    interval: 5000, // 自动切换时间间隔
+    duration: 300, // 滑动动画时长
+    bannerArr: [
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png' }
+    ]
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+Page {
+  background-color: #fff;
+}
+
+.row {
+  width: 686rpx;
+  height: 2rpx;
+  background-color: #eee;
+  margin: 0 auto;
+}
+
+/* 首页轮播图 */
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 360rpx;
+  transition: all 0.2s ease;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.swiperHide {
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.introduce {
+  padding: 72rpx 24rpx 72rpx 32rpx;
+}
+
+.introduce-title > text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 32rpx;
+  text-align: left;
+}
+
+.introduce-content {
+  margin-top: 40rpx;
+}
+
+.introduce-content > text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+  text-align: left;
+}
+
+.introduce-address {
+  margin-top: 32rpx;
+}
+
+.introduce-address > text {
+  color: rgba(187, 187, 187, 1);
+  font-size: 24rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.attention {
+  margin: 72rpx 32rpx;
+}
+
+.attention-title > text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 16px;
+  text-align: left;
+}
+
+.attention-content {
+  margin-top: 40rpx;
+}
+
+.attention-content > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+  text-align: left;
+}
+
+.coupons {
+  margin-top: 72rpx;
+  padding: 0 32rpx 0 48rpx;
+}
+
+.coupons-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coupons-title > text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 32rpx;
+  text-align: left;
+}
+
+.coupons-title-right > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+  text-align: left;
+  align-items: center;
+}
+</style>

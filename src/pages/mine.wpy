@@ -1,0 +1,29 @@
+<template>
+  <view></view>
+</template>
+<script>
+import wepy from 'wepy'
+// import { connect } from 'wepy-redux'
+export default class Mine extends wepy.page {
+  config = {
+    navigationBarTitleText: '个人中心'
+  }
+  components = {
+
+  }
+  data = {
+
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style lang='less' scoped>
+</style>

@@ -1,0 +1,78 @@
+<template>
+  <view class="time">
+    <block wx:for="{{time}}" wx:key="{{index}}">
+      <view class="time-item {{index == activeTime ? 'activeTime' : ''}}">
+        <text>{{item.section}}</text>
+      </view>
+    </block>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Time extends wepy.component {
+  props = {
+
+  }
+  data = {
+    activeTime: 0,
+    time: [{
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }, {
+      section: '10:00-12:00'
+    }]
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+.time {
+  margin-top: 68rpx;
+  margin-bottom: 36rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.time-item {
+  width: 172rpx;
+  height: 72rpx;
+  border-radius: 40rpx;
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+
+.time-item > text {
+  line-height: 72rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.activeTime {
+  background-image: linear-gradient(to right, #ff541f, #ff201f);
+}
+
+.activeTime > text {
+  color: #fff;
+}
+</style>

@@ -1,152 +1,110 @@
 <template>
   <view class="container">
-		<view class="swiper {{isfull ?'swiperHide':''}}">
-			<swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
-				<block wx:for="{{bannerArr}}" wx:key="index">
-					<swiper-item data-index="{{index}}" @tap="tapImg">
-					<image src="{{item.uri}}" class="slide_image" mode="widthFix"/>
-					</swiper-item>
-				</block>
-			</swiper>
+    <!-- 轮播图 -->
+    <view class="swiper {{isfull ?'swiperHide':''}}">
+      <swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
+        <block wx:for="{{bannerArr}}" wx:key="index">
+          <swiper-item data-index="{{index}}" @tap="tapImg">
+            <image src="{{item.url}}" class="slide_image" mode="widthFix" />
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
-		<view class="page">
-			<view class="nav">
-				<view class="nav-son {{shownavindex == 1? 'active' : ''}}" @tap="listqy" data-nav="1">
-						<view class="content">深圳市全市</view>
-						<view class="icon"></view>
-				</view>
-				<view class="nav-son borders {{shownavindex == 2? 'active' : ''}}" @tap="list" data-nav="2">
-						<view class="content">全部主题</view>
-						<view class="icon"></view>
-				</view>
-			</view>
-			<view class="area {{qyopen ? 'slidown' : 'slidup'}} {{qyshow ? 'disappear':''}}">
-					<view class="area-item area-left">
-							<view class="{{select1 == index ? 'current' : ''}}" wx:for="{{cityleft}}" wx:key="{{key}}" @tap="selectleft" data-city='{{index}}'>
-									{{index}}
-							</view>
-					</view>
-					<view class="area-item area-center">
-							<view class="{{select2 == index ? 'current2' : ''}}" wx:for="{{citycenter}}" wx:key="{{key}}" @tap="selectcenter" data-city='{{index}}'>
-									{{item}}
-							</view>
-					</view>
-			</view>
-			<view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
-					<view class="{{selectTheme == index ? 'current2':''}}" wx:for="{{theme}}" wx:key="{{index}}" @tap="selectTheme" data-theme='{{index}}'>
-							{{item}}
-					</view>
-			</view>
-			<view class="fullbg {{isfull ?'fullopacity':''}}" @tap="hidebg"></view>
-		</view>
 
-		
+    <!-- 下拉抽屉 -->
+    <Drawer />
+
+    <!-- 主题卡片 -->
+    <view class="theme">
+      <view class="theme-card" wx:for="{{themeCard}}" wx:key="index" @tap="hrefVenueIsIntro">
+        <image class="theme-card-img" src="{{item.url}}" mode="aspectFill"></image>
+        <view class="theme-card-info">
+          <view class="title">
+            <text>{{item.name}}</text>
+            <text>{{item.address}}</text>
+          </view>
+          <view class="button" @tap="hrefVenueBooking">
+            <view></view>
+            <text>预约</text>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import { getCity } from '../utils/city'
+import wepy from 'wepy'
+// import { getCity } from '../utils/city'
+import Drawer from '../components/drawer'
 
-  export default class Index extends wepy.page {
-    config = {
-      navigationBarTitleText: '跨界空间'
-    }
-    components = {
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '跨界空间'
+  }
+  components = {
+    Drawer
+  }
 
-    }
-
-    data = {
-      swiperCurrent: 0, // 轮播图当前下标
-      autoplay: true,
-      interval: 5000, // 自动切换时间间隔
-      duration: 300, // 滑动动画时长
-      content: [],
-      qyopen: false,
-      qyshow: false,
-      nzopen: false,
-      nzshow: false,
-      isfull: false,
-      cityleft: getCity(),
-      citycenter: {},
-      cityright: {},
-      theme: [],
-      select1: '',
-      select2: '',
-      selectTheme: '',
-      shownavindex: '',
-      bannerArr: [
-        {uri: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png'},
-        {uri: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png'},
-        {uri: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png'},
-        {uri: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png'},
-        {uri: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png'}
-      ]
-    }
-
-    onLoad() {
-      this.theme = ['全部主题', '健身主题', '轰趴主题', '亲子主题', '舞蹈主题', '音乐K歌主题', '神秘主题']
-    }
-
-    methods = {
-      listqy: function(e) {
-        if (this.data.qyopen) {
-          this.qyopen = false
-          this.nzopen = false
-          this.nzshow = true
-          this.qyshow = false
-          this.isfull = false
-          this.shownavindex = 0
-        } else {
-          this.qyopen = true
-          this.nzopen = false
-          this.nzshow = true
-          this.qyshow = false
-          this.isfull = true
-          this.shownavindex = e.currentTarget.dataset.nav
-        }
-      },
-      list: function(e) {
-        if (this.data.nzopen) {
-          this.nzopen = false
-          this.qyopen = false
-          this.nzshow = false
-          this.qyshow = true
-          this.isfull = false
-          this.shownavindex = 0
-        } else {
-          this.content = this.data.theme
-          this.nzopen = true
-          this.qyopen = false
-          this.nzshow = false
-          this.qyshow = true
-          this.isfull = true
-          this.shownavindex = e.currentTarget.dataset.nav
-        }
-      },
-      selectleft: function(e) {
-        this.cityright = {}
-        this.citycenter = this.data.cityleft[e.currentTarget.dataset.city]
-        this.select1 = e.target.dataset.city
-        this.select2 = ''
-      },
-      selectcenter: function(e) {
-        this.cityright = this.data.citycenter[e.currentTarget.dataset.city]
-        this.select2 = e.target.dataset.city
-      },
-      selectTheme: function(e) {
-        this.selectTheme = e.target.dataset.theme
-      },
-      hidebg: function(e) {
-        this.qyopen = false
-        this.nzopen = false
-        this.nzshow = true
-        this.qyshow = true
-        this.isfull = false
-        this.shownavindex = 0
+  data = {
+    swiperCurrent: 0, // 轮播图当前下标
+    autoplay: true,
+    interval: 5000, // 自动切换时间间隔
+    duration: 300, // 滑动动画时长
+    isfull: false,
+    scrollTop: 1,
+    bannerArr: [
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png' }
+    ],
+    themeCard: [
+      {
+        name: '白尾鹿舞蹈工作室',
+        address: '福田区龙珠四路金谷创业园F栋',
+        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png'
+      }, {
+        name: '美国主题馆',
+        address: '福田区龙珠四路金谷创业园F栋',
+        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png'
+      }, {
+        name: '巴西主题馆',
+        address: '福田区龙珠四路金谷创业园F栋',
+        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png'
+      }, {
+        name: '韩国主题馆',
+        address: '福田区龙珠四路金谷创业园F栋',
+        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png'
       }
+    ]
+  }
+
+  onLoad() {
+    console.log(wepy)
+  }
+
+  events = {
+    isfull(isfull, event) {
+      this.isfull = isfull
     }
   }
+
+  methods = {
+    hrefVenueIsIntro() {
+      wepy.navigateTo({
+        url: './venueIsIntro'
+      })
+    },
+
+    hrefVenueBooking() {
+      wepy.navigateTo({
+        url: './venueBooking'
+      })
+    }
+  }
+}
 
 </script>
 
@@ -154,13 +112,14 @@
 /* 首页轮播图 */
 
 .swiper {
-	width: 100%;
-  height: 360rpx;
   position: relative;
+  width: 100%;
+  height: 360rpx;
+  transition: all 0.2s ease;
 }
 
 swiper {
-	width: 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -170,190 +129,71 @@ swiper image {
 }
 
 .swiperHide {
-	height: 0;
-	opacity: 0;
-	transition: all .2s ease;
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
 }
 
-/* 下拉抽屉 */
-
-.page {
-  height: 100%;
-  background: #fff;
-  overflow: hidden;
-	width: 100%;
+/* 主题卡片 */
+.theme-card:first-of-type {
+  margin-top: 122rpx;
 }
 
-.nav {
-  position: relative;
-  z-index: 99;
+.theme-card {
+  left: 28rpx;
+  width: 694rpx;
+  height: 332rpx;
+  border-radius: 16rpx;
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: 24rpx;
+}
+
+.theme-card-img {
+  width: 100%;
+  height: 190rpx;
+  // background-image: url('https://ofdznzfo9.qnssl.com/rmall_swiper5.png');
+  // background-size: 100%;
+  // background-repeat: no-repeat;
+  border-radius: 16rpx 16rpx 0 0;
+}
+
+.theme-card-info {
+  height: 122rpx;
   display: flex;
-  background: #fff;
-  border-bottom: 1rpx solid #EEEEEE;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-card-info .title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24rpx;
+}
+.theme-card-info .title > text:first-child {
+  color: rgba(0, 0, 0, 1);
+  font-size: 32rpx;
+  text-align: left;
+  margin-bottom: 10rpx;
+}
+.theme-card-info .title > text:last-child {
+  color: rgba(187, 187, 187, 1);
+  font-size: 24rpx;
+  text-align: left;
 }
 
-.nav-son {
+.theme-card-info .button {
   display: flex;
-  flex: 1;
-  text-align: center;
-  height: 88rpx;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
+  width: 160rpx;
+  height: 55rpx;
+  border-radius: 28rpx;
+  background-image: linear-gradient(to right, #ff541f, #ff201f);
+  margin-right: 32rpx;
 }
 
-
-.content {
-  display: inline-block;
-  font-size: 26rpx;
+.theme-card-info .button > text {
+  color: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  line-height: 45rpx;
 }
-
-.icon {
-  display: inline-block;
-  border: 8rpx solid transparent;
-  border-top: 8rpx solid #D8D8D8;
-  margin-left: 48rpx;
-  margin-top: 8rpx;
-  transform-origin: 50% 25%;
-  transition: all .2s ease-in;
-}
-
-.temp {
-  position: relative;
-  z-index: 4;
-}
-
-.temp1 {
-  display: none;
-  width: 100%;
-  max-height: 720rpx;
-  overflow-y: scroll;
-  line-height: 100rpx;
-  background: #fff;
-}
-
-.slidedown {
-  transform: translateY(0%);
-}
-
-.temp view {
-  font-size: 28rpx;
-  color: #000;
-  text-align: center;
-}
-
-.area {
-  position: relative;
-  display: none;
-  height: 720rpx;
-  z-index: 5;
-}
-
-.area .area-item {
-  overflow-y: scroll;
-  float: left;
-  height: 720rpx;
-  line-height: 80rpx;
-  box-sizing: border-box;
-}
-
-.area-item view {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  padding-left: 72rpx;
-  font-size: 28rpx;
-}
-
-.area-left {
-  width: 38.4%;
-  background: #F4F4F4 100%;
-}
-
-.area-left view {
-  color: #666666;
-}
-
-.area-center {
-  width: 61.6%;
-  background: #FFFFFF 100%;
-}
-
-.area-center view {
-  color: #000000 100%;
-}
-
-.area-right {
-  background: #fff;
-}
-
-
-.current {
-  background: #fff;
-}
-
-.current2 {
-  color: rgba(255, 32, 31, 1) !important;
-}
-
-.fullbg {
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: rgb(1, 1, 1);
-  transition: all .3s;
-  opacity: 0;
-}
-
-.fullopacity {
-  opacity: 0.5;
-}
-
-.nav-son.active .content {
-  font-weight: 600;
-  transition: all .2s ease-in;
-}
-
-.nav-son.active .icon {
-  border-bottom: 8rpx solid #D8D8D8 100%;
-  transform: rotate(180deg);
-  transition: all .2s ease-in;
-}
-
-@keyframes slidown {
-  from {
-    transform: translateY(-100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-.slidown {
-  display: block;
-  animation: slidown 0.3s ease-in both;
-}
-
-@keyframes slidup {
-  from {
-    transform: translateY(0%);
-  }
-
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-.slidup {
-  display: none;
-  animation: slidup 0.3s ease-in both;
-}
-
-.disappear {
-  display: none;
-}
-/* --END-- */
 </style>

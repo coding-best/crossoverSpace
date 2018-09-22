@@ -1,0 +1,192 @@
+<template>
+  <view class="container">
+    <!-- 头部 -->
+    <view class="header">
+      <view class="layer">
+        <view class="header-title">
+          <text>白尾鹿舞蹈工作室</text>
+        </view>
+        <view class="header-button" @tap="hrefVenueBooking">
+          <view></view>
+          <text>预约</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 商家介绍 -->
+    <view class="introduce">
+      <view class="introduce-title">
+        <view class="introduce-title-icon"></view>
+        <text>商家介绍</text>
+      </view>
+      <view class="introduce-content">
+        <text>白尾鹿舞蹈工作室提供丰富的舞蹈教学，每月超过三百堂多样化课程、数十种舞蹈风格，最多元的课程选择、由浅入深渐进式教学，带领您轻鬆踏出舞蹈第一步！白尾鹿舞蹈工作室更俱备专职製作团队，整合软硬体资源、舞蹈编排，办理多项国际街舞大赛，多次获得国际街舞联盟认可。</text>
+      </view>
+    </view>
+
+    <view class="row"></view>
+
+    <!-- 注意事项 -->
+    <view class="attention">
+      <view class="attention-title">
+        <view class="attention-title-icon"></view>
+        <text>注意事项</text>
+      </view>
+      <image class="attention-image" src="https://ofdznzfo9.qnssl.com/rmall_swiper1.png" mode="aspectFill"></image>
+      <view class="attention-content">
+        <text>-本票限单人使用，需团体情况下方可使用，团体需20人以上方可开场。
+-为保证活动顺利进行，建议提前15分钟到场，到场做准备工作，包括存放包物、了解地形，如迟到，时间计入活动时间内。
+-心脏不适、高血压、颈椎腰椎、酗酒及孕妇等不宜参加。
+
+-每场活动为3小时——3个半小时。活动安排如下：
+1. 签到集合
+2. 群体趣味游戏60分钟（日本馆进行）
+3.射箭包馆30分钟
+4.集体永生花手作120分钟
+5.大合照
+
+仅限周一至周四使用，周五至周日需+20元/人，趣味游戏场地升级+30元/人
+咨询电话：18675577842，18307555842</text>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class VenuelsIntro extends wepy.page {
+  config = {
+    navigationBarTitleText: '场馆介绍'
+  }
+  components = {
+
+  }
+  data = {
+
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+    hrefVenueBooking() {
+      wepy.navigateTo({
+        url: './venueBooking'
+      })
+    }
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+page {
+  background-color: #fff;
+}
+
+.row {
+  width: 686rpx;
+  height: 1rpx;
+  background-color: #EEEEEE;
+}
+
+/* 顶部 */
+.header {
+  position: relative;
+  height: 232rpx;
+  width: 100%;
+  background-image: url('https://ofdznzfo9.qnssl.com/rmall_swiper5.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  margin-left: 54rpx;
+}
+
+.header-title>text {
+  color: rgba(255, 255, 255, 1);
+  font-size: 40rpx;
+}
+
+.header-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+  height: 55rpx;
+  border-radius: 28rpx;
+  background-image: linear-gradient(to right, #ff541f, #ff201f);
+  margin-right: 54rpx;
+}
+
+.header-button > text {
+  color: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  line-height: 45rpx;
+}
+
+/* 商家介绍 */
+.introduce {
+  padding: 72rpx 32rpx;
+}
+
+.introduce-title {
+  display: flex;
+  align-items: center;
+}
+
+.introduce-title > text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 32rpx;
+}
+
+.introduce-content {
+  margin-top: 20rpx;
+}
+
+.introduce-content > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+}
+
+/* 注意事项 */
+.attention {
+  padding: 72rpx 32rpx;
+}
+
+.attention-image {
+  width: 686rpx;
+  height: 240rpx;
+  margin-top: 40rpx;
+}
+
+.attention-title {
+  display: flex;
+  align-items: center;
+}
+
+.attention-title > text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 32rpx;
+}
+
+.attention-content {
+  margin-top: 20rpx;
+}
+
+.attention-content > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+}
+</style>
