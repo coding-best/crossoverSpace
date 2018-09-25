@@ -1,9 +1,24 @@
 <template>
-  <view></view>
+  <view class="container">
+    <view class="activity-list" wx:for="{{list}}" wx:key="{{index}}" @tap="hrefActivityDetail">
+      <image class="activity-list-image" src="{{item.url}}"></image>
+      <view class="activity-list-title">
+        <view class="title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="date">
+          <view class="date-icon"></view>
+          <text>{{item.date}}</text>
+        </view>
+      </view>
+      <view class="activity-list-content">
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
 </template>
 <script>
 import wepy from 'wepy'
-// import { connect } from 'wepy-redux'
 export default class Activity extends wepy.page {
   config = {
     navigationBarTitleText: '活动列表'
@@ -12,13 +27,32 @@ export default class Activity extends wepy.page {
 
   }
   data = {
-
+    list: [{
+      url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png',
+      title: '博昇攀岩',
+      date: '2018-08-09',
+      content: '博昇攀岩是深圳市博昇实业有限公司旗下攀岩品牌，在国内率先打造概念与意象攀岩，现有会员数百人，曾多…'
+    }, {
+      url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png',
+      title: '极道场馆',
+      date: '2018-08-09',
+      content: '空手道是以动作简单直接，攻击力强见称的一种全方位武术。本会乃由全日本空手道连盟国际公认九段森田卫教...'
+    }, {
+      url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png',
+      title: '模拟赛车',
+      date: '2018-08-09',
+      content: '其实，每个人都可以享受“车”带给你的乐趣。哪怕你还不太懂车，哪怕你还没有自己的车，哪怕你的车不值什…'
+    }]
   }
   cutomFunction() {
 
   }
   methods = {
-
+    hrefActivityDetail: function () {
+      wepy.navigateTo({
+        url: './activityDetail'
+      })
+    }
   }
   onLoad() {
     this.cutomFunction()
@@ -26,5 +60,46 @@ export default class Activity extends wepy.page {
 }
 </script>
 <style>
+.activity-list {
+  padding: 0 28rpx;
+}
 
+.activity-list-image {
+  width: 694rpx;
+  height: 320rpx;
+  border-radius: 18rpx;
+}
+
+.activity-list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 12rpx;
+}
+
+.activity-list-title .title > text {
+  color: rgba(0, 0, 0, 1);
+  font-size: 32rpx;
+  text-align: left;
+}
+
+.activity-list-title .date {
+  margin-right: 20rpx;
+}
+
+.activity-list-title .date > text {
+  color: rgba(187, 187, 187, 1);
+  font-size: 24rpx;
+  text-align: left;
+}
+
+.activity-list-content {
+  margin-bottom: 90rpx;
+}
+
+.activity-list-content > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+}
 </style>

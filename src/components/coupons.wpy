@@ -118,7 +118,6 @@ export default class Coupons extends wepy.component {
   width: 12rpx;
   height: 12rpx;
   background-color: rgba(255, 255, 255, 1);
-  // margin-top: 10rpx;
   border-radius: 50%;
 }
 

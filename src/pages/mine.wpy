@@ -1,5 +1,31 @@
 <template>
-  <view></view>
+  <view class="container">
+    <!-- 顶部资料 -->
+    <view class="header">
+      <view class="header-image"></view>
+      <view class="header-info">
+        <text>吴彦祖</text>
+        <text>快留下你的个性签名吧~</text>
+      </view>
+      <view class="right"></view>
+    </view>
+
+    <!-- 我的预约卡片 -->
+    <view class="subscribe">
+      <view class="subscribe-mine">
+        <text>我的预订</text>
+        <text>3</text>
+      </view>
+    </view>
+
+    <!-- 优惠券卡片 -->
+    <view class="coupons">
+      <view class="coupons-mine">
+        <text>优惠券</text>
+        <text>6</text>
+      </view>
+    </view>
+  </view>
 </template>
 <script>
 import wepy from 'wepy'
@@ -25,5 +51,103 @@ export default class Mine extends wepy.page {
   }
 }
 </script>
-<style lang='less' scoped>
+<style>
+page {
+  background-color: #f4f4f4;
+}
+
+.header {
+  width: 100%;
+  height: 304rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.header-image {
+  width: 160rpx;
+  height: 160rpx;
+  background-image: url('https://ofdznzfo9.qnssl.com/rmall_swiper1.png');
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 72rpx;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 40rpx;
+}
+
+.header-info > text:first-child {
+  color: rgba(0, 0, 0, 1);
+  font-size: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.header-info > text:last-child {
+  color: rgba(102, 102, 102, 1);
+  font-size: 26rpx;
+}
+
+.subscribe {
+  width: 694rpx;
+  height: 240rpx;
+  border-radius: 16rpx;
+  background-image: linear-gradient(to left, #ff5f1f, #ff791f);
+  box-shadow: 0rpx 16rpx 32rpx -8rpx rgba(70, 21, 21, 0.1);
+  margin-top: 64rpx;
+}
+
+.subscribe-mine {
+  width: 128rpx;
+  display: flex;
+  height: 240rpx;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-left: 65rpx;
+}
+
+.subscribe-mine > text {
+  color: rgba(255, 255, 255, 1);
+  font-size: 32rpx;
+}
+.subscribe-mine > text:last-child {
+  color: rgba(255, 255, 255, 1);
+  font-size: 72rpx;
+  margin-top: 10rpx;
+}
+
+.coupons {
+  width: 694rpx;
+  height: 240rpx;
+  border-radius: 16rpx;
+  left: 14px;
+  background-color: #ffffff;
+  box-shadow: 0rpx 16rpx 32rpx -8rpx rgba(70, 21, 21, 0.1);
+  margin-top: 48rpx;
+}
+
+.coupons-mine {
+  width: 128rpx;
+  display: flex;
+  height: 240rpx;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-left: 65rpx;
+}
+
+.coupons-mine > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 32rpx;
+}
+.coupons-mine > text:last-child {
+  color: rgba(0, 0, 0, 1);
+  font-size: 72rpx;
+  margin-top: 10rpx;
+}
 </style>

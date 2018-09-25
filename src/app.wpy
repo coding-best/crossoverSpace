@@ -1,6 +1,6 @@
 <style lang='less'>
 page {
-  background-color: #f3f3f3;
+  background-color: #fff;
 }
 
 .container {
@@ -28,6 +28,7 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/activityDetail',
       'pages/venueBooking',
       'pages/venueIsIntro',
       'pages/home',

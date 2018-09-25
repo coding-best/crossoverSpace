@@ -23,7 +23,7 @@
             <text>{{item.name}}</text>
             <text>{{item.address}}</text>
           </view>
-          <view class="button" @tap="hrefVenueBooking">
+          <view class="button" @tap.stop="hrefVenueBooking">
             <view></view>
             <text>预约</text>
           </view>
@@ -109,6 +109,9 @@ export default class Index extends wepy.page {
 </script>
 
 <style lang="less">
+page {
+  background-color: #f3f3f3;
+}
 /* 首页轮播图 */
 
 .swiper {

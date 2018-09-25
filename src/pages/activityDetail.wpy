@@ -1,0 +1,136 @@
+<template>
+  <view class="container">
+    <!-- 轮播图 -->
+    <view class="swiper">
+      <swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
+        <block wx:for="{{bannerArr}}" wx:key="index">
+          <swiper-item data-index="{{index}}" @tap="tapImg">
+            <image src="{{item.url}}" class="slide_image" mode="widthFix" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 活动概要 -->
+    <view class="outline">
+      <view class="outline-title">
+        <view class="outline-title-icon"></view>
+        <text>活动概要</text>
+      </view>
+      <view class="outline-content">
+        <text>空手道是以动作简单直接，攻击力强见称的一种全方位武术。本会乃由全日本空手道连盟国际公认九段~森田卫教士所创办之日本刚柔流空手道森田会，香港支部。</text>
+      </view>
+    </view>
+
+    <view class="row"></view>
+
+    <!-- 活动介绍 -->
+    <view class="outline">
+      <view class="outline-title">
+        <view class="outline-title-icon"></view>
+        <text>活动介绍</text>
+      </view>
+      <image class="outline-image" src="https://ofdznzfo9.qnssl.com/rmall_swiper2.png"></image>
+      <view class="outline-content">
+        <text>大中华拔刀道居合剑术课程：
+  共分为五个教程项目：
+  刀剑礼仪、神礼、人礼、刀礼；刀剑鉴赏、清洁保养、礼仪木刀势法祖太刀稽古传统袋竹刀剑对战试合大中华拔刀道居合剑术型制套路二十一本目：
+  合共二十一式  拔刀术试斩：三十多个试斩招式
+  学员学习表现优异者，可以保荐到日本学习及参加比赛进升推荐入门学习古流剑术柳生新阴流、天心流等等有数百年历史承传的古流派剑术。</text>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class ActivityDetail extends wepy.page {
+  config = {
+    navigationBarTitleText: '活动详情'
+  }
+  components = {
+
+  }
+  data = {
+    swiperCurrent: 0, // 轮播图当前下标
+    autoplay: true,
+    interval: 5000, // 自动切换时间间隔
+    duration: 300, // 滑动动画时长
+    bannerArr: [
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png' },
+      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png' }
+    ]
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+.row {
+  width: 686rpx;
+  height: 2rpx;
+  background-color: #eee;
+  margin: 0 auto;
+}
+
+/* 首页轮播图 */
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 360rpx;
+  transition: all 0.2s ease;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.swiperHide {
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.outline {
+  margin: 72rpx 32rpx;
+}
+
+.outline-title > text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 16px;
+  text-align: left;
+}
+
+.outline-content {
+  margin-top: 40rpx;
+}
+
+.outline-content > text {
+  color: rgba(125, 125, 125, 1);
+  font-size: 13px;
+  text-align: left;
+}
+
+.outline-image {
+  width: 686rpx;
+  height: 240rpx;
+  margin-top: 40rpx;
+  border-radius: 8rpx;
+}
+</style>
