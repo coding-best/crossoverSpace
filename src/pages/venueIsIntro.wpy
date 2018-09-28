@@ -1,13 +1,13 @@
 <template>
   <view class="container">
     <!-- 头部 -->
-    <view class="header">
+    <view class="header" style="background-image: url('../assets/img_bwl.png');">
       <view class="layer">
         <view class="header-title">
           <text>白尾鹿舞蹈工作室</text>
         </view>
         <view class="header-button" @tap="hrefVenueBooking">
-          <view></view>
+          <image class="buttonIcon" src="../assets/buttom_book.svg"></image>
           <text>预约</text>
         </view>
       </view>
@@ -16,7 +16,7 @@
     <!-- 商家介绍 -->
     <view class="introduce">
       <view class="introduce-title">
-        <view class="introduce-title-icon"></view>
+        <image class="introduce-title-icon" src="../assets/icon_introduction.svg" mode="aspectFill"></image>
         <text>商家介绍</text>
       </view>
       <view class="introduce-content">
@@ -29,10 +29,10 @@
     <!-- 注意事项 -->
     <view class="attention">
       <view class="attention-title">
-        <view class="attention-title-icon"></view>
+        <image class="introduce-title-icon" src="../assets/icon_note.svg" mode="aspectFill"></image>
         <text>注意事项</text>
       </view>
-      <image class="attention-image" src="https://ofdznzfo9.qnssl.com/rmall_swiper1.png" mode="aspectFill"></image>
+      <image class="attention-image" src="../assets/img_jidao.png" mode="aspectFill"></image>
       <view class="attention-content">
         <text>-本票限单人使用，需团体情况下方可使用，团体需20人以上方可开场。
 -为保证活动顺利进行，建议提前15分钟到场，到场做准备工作，包括存放包物、了解地形，如迟到，时间计入活动时间内。
@@ -94,8 +94,7 @@ page {
   position: relative;
   height: 232rpx;
   width: 100%;
-  background-image: url('https://ofdznzfo9.qnssl.com/rmall_swiper5.png');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -130,6 +129,12 @@ page {
   margin-right: 54rpx;
 }
 
+.buttonIcon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 12rpx;
+}
+
 .header-button > text {
   color: rgba(255, 255, 255, 1);
   font-size: 24rpx;
@@ -149,6 +154,12 @@ page {
 .introduce-title > text {
   color: rgba(51, 51, 51, 1);
   font-size: 32rpx;
+}
+
+.introduce-title-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 24rpx;
 }
 
 .introduce-content {

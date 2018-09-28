@@ -1,0 +1,136 @@
+<template>
+  <view class="container">
+    <!-- 头像 -->
+    <view class="avatar">
+      <image class="avatar-img" src="../assets/wyz.png"></image>
+      <text>吴彦祖</text>
+    </view>
+
+    <!-- 个人信息编辑 -->
+    <view class="info">
+      <view class="infoEditor">
+        <text>签名</text>
+        <input class="infoEditor-input" type="text" value="" placeholder="编辑个性签名" placeholderClass="placeholder" />
+        <image class="infoEditor-icon" src="../assets/icon_edit.svg"></image>
+      </view>
+      <view class="infoEditor">
+        <text>生日</text>
+        <input class="infoEditor-input" value="" placeholder="点击填写" placeholderClass="placeholder" />
+        <image class="infoEditor-icon" src=""></image>
+      </view>
+      <view class="infoEditor">
+        <text>身高</text>
+        <input class="infoEditor-input" value="" placeholder="点击填写" placeholderClass="placeholder" />
+        <image class="infoEditor-icon" src=""></image>
+      </view>
+      <view class="infoEditor">
+        <text>体重</text>
+        <input class="infoEditor-input" value="" placeholder="点击填写" placeholderClass="placeholder" />
+        <image class="infoEditor-icon" src=""></image>
+      </view>
+    </view>
+
+    <view class="next">
+      <text>保存</text>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class MineInfo extends wepy.page {
+  config = {
+    navigationBarTitleText: '填写个人信息'
+  }
+  components = {
+
+  }
+  data = {
+
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar > text {
+  color: rgba(0, 0, 0, 1);
+  font-size: 32rpx;
+}
+
+.avatar-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: 48rpx;
+  margin-bottom: 32rpx;
+}
+
+.info {
+  margin-top: 63rpx;
+}
+
+.infoEditor {
+  width: 622rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 32rpx;
+  padding: 46rpx 32rpx 36rpx 32rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.infoEditor > text {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #666666;
+  text-align: justify;
+}
+
+.infoEditor-icon {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.infoEditor-input {
+  font-size: 26rpx;
+  color: #333333;
+  text-align: right;
+  width: 500rpx;
+}
+
+.placeholder {
+  font-size: 26rpx;
+  color: rgb(126, 126, 126);
+  text-align: right;
+}
+
+.next {
+  position: fixed;
+  bottom: 96rpx;
+  width: 622rpx;
+  height: 88rpx;
+  border-radius: 48rpx;
+  background-image: linear-gradient(to right, #ff541f, #ff201f);
+  text-align: center;
+}
+
+.next > text {
+  line-height: 88rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32rpx;
+}
+</style>

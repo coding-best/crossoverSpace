@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_time</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="B1_活动列表" transform="translate(-256.000000, -256.000000)" fill-rule="nonzero">
+            <g id="Group" transform="translate(14.000000, 80.000000)">
+                <g id="card_3">
+                    <g id="icon_time" transform="translate(241.000000, 175.000000)">
+                        <rect id="Rectangle-path" fill="#C4C4C4" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M8,1 C4.136,1 1,4.136 1,8 C1,11.864 4.136,15 8,15 C11.864,15 15,11.864 15,8 C15,4.136 11.864,1 8,1 Z M11.7333333,8.46666667 L8,8.46666667 C7.73866667,8.46666667 7.53333333,8.26133333 7.53333333,8 L7.53333333,4.26666667 C7.53333333,4.00533333 7.73866667,3.8 8,3.8 C8.26133333,3.8 8.46666667,4.00533333 8.46666667,4.26666667 L8.46666667,7.53333333 L11.7333333,7.53333333 C11.9946667,7.53333333 12.2,7.73866667 12.2,8 C12.2,8.26133333 11.9946667,8.46666667 11.7333333,8.46666667 Z" id="Shape" fill="#FF201F"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -7,7 +7,7 @@
           <text>{{item.title}}</text>
         </view>
         <view class="date">
-          <view class="date-icon"></view>
+          <image class="date-icon" src="../assets/icon_time.svg" mode="aspectFill"></image>
           <text>{{item.date}}</text>
         </view>
       </view>
@@ -28,17 +28,17 @@ export default class Activity extends wepy.page {
   }
   data = {
     list: [{
-      url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png',
+      url: '../assets/img_pangyan.png',
       title: '博昇攀岩',
       date: '2018-08-09',
       content: '博昇攀岩是深圳市博昇实业有限公司旗下攀岩品牌，在国内率先打造概念与意象攀岩，现有会员数百人，曾多…'
     }, {
-      url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png',
+      url: '../assets/img_jidao.png',
       title: '极道场馆',
       date: '2018-08-09',
       content: '空手道是以动作简单直接，攻击力强见称的一种全方位武术。本会乃由全日本空手道连盟国际公认九段森田卫教...'
     }, {
-      url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png',
+      url: '../assets/img_shaiche.png',
       title: '模拟赛车',
       date: '2018-08-09',
       content: '其实，每个人都可以享受“车”带给你的乐趣。哪怕你还不太懂车，哪怕你还没有自己的车，哪怕你的车不值什…'
@@ -86,12 +86,20 @@ export default class Activity extends wepy.page {
 
 .activity-list-title .date {
   margin-right: 20rpx;
+  display: flex;
+  align-items: center;
 }
 
 .activity-list-title .date > text {
   color: rgba(187, 187, 187, 1);
   font-size: 24rpx;
   text-align: left;
+}
+
+.activity-list-title .date  .date-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 16rpx;
 }
 
 .activity-list-content {

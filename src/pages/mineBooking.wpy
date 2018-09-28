@@ -1,0 +1,120 @@
+<template>
+  <view class="container">
+    <!-- 我的预约卡片 -->
+    <view class="subscribe" @tap="hrefMineBooking">
+      <image class="background-icon1" src="../assets/img_booking.svg"></image>
+      <block wx:for="{{booking}}" wx:key="{{index}}">
+        <view class="booking-item {{index == activeBooking ? 'activeBooking' : ''}}">
+          <text>{{item.status}}</text>
+          <text>{{item.number}}</text>
+          <view class="subscript {{index == activeBooking ? 'activeBooking' : ''}}"></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的预约'
+  }
+  components = {
+
+  }
+  data = {
+    activeBooking: 0,
+    booking: [{
+      status: '全部',
+      number: '6'
+    }, {
+      status: '待付款',
+      number: '1'
+    }, {
+      status: '待开始',
+      number: '3'
+    }, {
+      status: '使用中',
+      number: '0'
+    }, {
+      status: '已完成',
+      number: '2'
+    }]
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+.subscribe {
+  width: 694rpx;
+  height: 240rpx;
+  border-radius: 16rpx;
+  background-image: linear-gradient(to left, #ff5f1f, #ff791f);
+  box-shadow: 0rpx 16rpx 32rpx -8rpx rgba(70, 21, 21, 0.1);
+  margin-top: 64rpx;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: -1;
+}
+
+.background-icon1 {
+  width: 240rpx;
+  height: 240rpx;
+  position: absolute;
+  bottom: -12rpx;
+  right: 20rpx;
+  z-index: -1;
+}
+.booking {
+  margin-top: 72rpx;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.booking-item {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72rpx;
+}
+
+.booking-item > text {
+  color: #fff;
+  font-size: 48rpx;
+  text-align: center;
+}
+
+.booking-item > text:first-child {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 52rpx;
+  margin-bottom: 40rpx;
+}
+
+.subscript {
+  width: 48rpx;
+  height: 6rpx;
+  border-radius: 30%;
+  color: #fff;
+  background-color: #FFF;
+  margin-top: 14rpx;
+  opacity: 0;
+}
+
+.activeBooking {
+  opacity: 1;
+}
+</style>

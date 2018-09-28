@@ -5,7 +5,7 @@
       <swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
         <block wx:for="{{bannerArr}}" wx:key="index">
           <swiper-item data-index="{{index}}" @tap="tapImg">
-            <image src="{{item.url}}" class="slide_image" mode="widthFix" />
+            <image src="{{item.url}}" class="slide_image" mode="aspectFill" />
           </swiper-item>
         </block>
       </swiper>
@@ -21,7 +21,7 @@
         <view class="right"></view>
       </view>
       <view class="introduce-address">
-        <view class="icon"></view>
+        <image class="icon" src="../assets/icon_location.svg"></image>
         <text>科技园 龙珠四路金谷创业园F栋, 1.6 km</text>
         <view class="right"></view>
       </view>
@@ -82,11 +82,10 @@ export default class VenueBooking extends wepy.page {
     interval: 5000, // 自动切换时间间隔
     duration: 300, // 滑动动画时长
     bannerArr: [
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png' }
+      { url: '../assets/img_pangyan.png' },
+      { url: '../assets/img_bwl.png' },
+      { url: '../assets/img_hgg.png' },
+      { url: '../assets/img_jidao.png' }
     ]
   }
   cutomFunction() {
@@ -163,7 +162,16 @@ swiper image {
 }
 
 .introduce-address {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   margin-top: 32rpx;
+}
+
+.introduce-address .icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
 }
 
 .introduce-address > text {
@@ -199,7 +207,7 @@ swiper image {
 
 .coupons {
   margin-top: 72rpx;
-  padding: 0 32rpx 0 48rpx;
+  padding: 0 40rpx;
 }
 
 .coupons-title {

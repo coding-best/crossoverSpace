@@ -14,7 +14,7 @@
     <!-- 活动概要 -->
     <view class="outline">
       <view class="outline-title">
-        <view class="outline-title-icon"></view>
+        <image class="outline-title-icon" src="../assets/icon_introduction.svg"></image>
         <text>活动概要</text>
       </view>
       <view class="outline-content">
@@ -27,16 +27,13 @@
     <!-- 活动介绍 -->
     <view class="outline">
       <view class="outline-title">
-        <view class="outline-title-icon"></view>
+        <image class="outline-title-icon" src="../assets/icon_activity.svg"></image>
         <text>活动介绍</text>
       </view>
-      <image class="outline-image" src="https://ofdznzfo9.qnssl.com/rmall_swiper2.png"></image>
+      <image class="outline-image" src="../assets/img_jidao.png" mode="aspectFill"></image>
       <view class="outline-content">
-        <text>大中华拔刀道居合剑术课程：
-  共分为五个教程项目：
-  刀剑礼仪、神礼、人礼、刀礼；刀剑鉴赏、清洁保养、礼仪木刀势法祖太刀稽古传统袋竹刀剑对战试合大中华拔刀道居合剑术型制套路二十一本目：
-  合共二十一式  拔刀术试斩：三十多个试斩招式
-  学员学习表现优异者，可以保荐到日本学习及参加比赛进升推荐入门学习古流剑术柳生新阴流、天心流等等有数百年历史承传的古流派剑术。</text>
+        <text>大中华拔刀道居合剑术课程： 共分为五个教程项目： 刀剑礼仪、神礼、人礼、刀礼；刀剑鉴赏、清洁保养、礼仪木刀势法祖太刀稽古传统袋竹刀剑对战试合大中华拔刀道居合剑术型制套路二十一本目： 合共二十一式 拔刀术试斩：三十多个试斩招式 学员学习表现优异者，可以保荐到日本学习及参加比赛进升推荐入门学习古流剑术柳生新阴流、天心流等等有数百年历史承传的古流派剑术。
+        </text>
       </view>
     </view>
   </view>
@@ -56,11 +53,10 @@ export default class ActivityDetail extends wepy.page {
     interval: 5000, // 自动切换时间间隔
     duration: 300, // 滑动动画时长
     bannerArr: [
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png' }
+      { url: '../assets/img_pangyan.png' },
+      { url: '../assets/img_bwl.png' },
+      { url: '../assets/img_hgg.png' },
+      { url: '../assets/img_jidao.png' }
     ]
   }
   cutomFunction() {
@@ -111,10 +107,21 @@ swiper image {
   margin: 72rpx 32rpx;
 }
 
+.outline-title {
+  display: flex;
+  align-items: center;
+}
+
 .outline-title > text {
   color: rgba(51, 51, 51, 1);
   font-size: 16px;
   text-align: left;
+}
+
+.outline-title-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 24rpx;
 }
 
 .outline-content {

@@ -1,8 +1,8 @@
 <template>
   <view class="container">
     <!-- 顶部资料 -->
-    <view class="header">
-      <view class="header-image"></view>
+    <view class="header" @tap="hrefMineInfo">
+      <image class="header-image" src="../assets/wyz.png" mode="aspectFill"></image>
       <view class="header-info">
         <text>吴彦祖</text>
         <text>快留下你的个性签名吧~</text>
@@ -11,11 +11,12 @@
     </view>
 
     <!-- 我的预约卡片 -->
-    <view class="subscribe">
+    <view class="subscribe" @tap="hrefMineBooking">
       <view class="subscribe-mine">
         <text>我的预订</text>
         <text>3</text>
       </view>
+      <image class="background-icon1" src="../assets/img_booking.svg"></image>
     </view>
 
     <!-- 优惠券卡片 -->
@@ -24,6 +25,7 @@
         <text>优惠券</text>
         <text>6</text>
       </view>
+      <image class="background-icon2" src="../assets/img_coupon.svg"></image>
     </view>
   </view>
 </template>
@@ -44,7 +46,17 @@ export default class Mine extends wepy.page {
 
   }
   methods = {
+    hrefMineInfo() {
+      wepy.navigateTo({
+        url: './mineInfo'
+      })
+    },
 
+    hrefMineBooking() {
+      wepy.navigateTo({
+        url: './mineBooking'
+      })
+    }
   }
   onLoad() {
     this.cutomFunction()
@@ -68,8 +80,6 @@ page {
 .header-image {
   width: 160rpx;
   height: 160rpx;
-  background-image: url('https://ofdznzfo9.qnssl.com/rmall_swiper1.png');
-  background-size: cover;
   border-radius: 50%;
   margin-left: 72rpx;
 }
@@ -99,6 +109,8 @@ page {
   background-image: linear-gradient(to left, #ff5f1f, #ff791f);
   box-shadow: 0rpx 16rpx 32rpx -8rpx rgba(70, 21, 21, 0.1);
   margin-top: 64rpx;
+  display: flex;
+  position: relative;
 }
 
 .subscribe-mine {
@@ -125,10 +137,11 @@ page {
   width: 694rpx;
   height: 240rpx;
   border-radius: 16rpx;
-  left: 14px;
   background-color: #ffffff;
   box-shadow: 0rpx 16rpx 32rpx -8rpx rgba(70, 21, 21, 0.1);
   margin-top: 48rpx;
+  display: flex;
+  position: relative;
 }
 
 .coupons-mine {
@@ -149,5 +162,21 @@ page {
   color: rgba(0, 0, 0, 1);
   font-size: 72rpx;
   margin-top: 10rpx;
+}
+
+.background-icon1 {
+  width: 240rpx;
+  height: 240rpx;
+  position: absolute;
+  bottom: -12rpx;
+  right: 20rpx;
+}
+
+.background-icon2 {
+  width: 240rpx;
+  height: 240rpx;
+  position: absolute;
+  bottom: -28rpx;
+  right: 20rpx;
 }
 </style>

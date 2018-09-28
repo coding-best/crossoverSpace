@@ -5,7 +5,7 @@
       <swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
         <block wx:for="{{bannerArr}}" wx:key="index">
           <swiper-item data-index="{{index}}" @tap="tapImg">
-            <image src="{{item.url}}" class="slide_image" mode="widthFix" />
+            <image src="{{item.url}}" class="slide_image" mode="aspectFill" />
           </swiper-item>
         </block>
       </swiper>
@@ -24,7 +24,7 @@
             <text>{{item.address}}</text>
           </view>
           <view class="button" @tap.stop="hrefVenueBooking">
-            <view></view>
+            <image class="buttonIcon" src="../assets/buttom_book.svg"></image>
             <text>预约</text>
           </view>
         </view>
@@ -54,29 +54,29 @@ export default class Index extends wepy.page {
     isfull: false,
     scrollTop: 1,
     bannerArr: [
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png' },
-      { url: 'https://ofdznzfo9.qnssl.com/rmall_swiper5.png' }
+      { url: '../assets/img_pangyan.png' },
+      { url: '../assets/img_bwl.png' },
+      { url: '../assets/img_hgg.png' },
+      { url: '../assets/img_jidao.png' },
+      { url: '../assets/img_mgg.png' }
     ],
     themeCard: [
       {
         name: '白尾鹿舞蹈工作室',
         address: '福田区龙珠四路金谷创业园F栋',
-        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper1.png'
+        url: '../assets/img_bwl.png'
       }, {
         name: '美国主题馆',
         address: '福田区龙珠四路金谷创业园F栋',
-        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper2.png'
+        url: '../assets/img_mgg.png'
       }, {
         name: '巴西主题馆',
         address: '福田区龙珠四路金谷创业园F栋',
-        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper3.png'
+        url: '../assets/img_bxg.png'
       }, {
         name: '韩国主题馆',
         address: '福田区龙珠四路金谷创业园F栋',
-        url: 'https://ofdznzfo9.qnssl.com/rmall_swiper4.png'
+        url: '../assets/img_hgg.png'
       }
     ]
   }
@@ -192,6 +192,12 @@ swiper image {
   border-radius: 28rpx;
   background-image: linear-gradient(to right, #ff541f, #ff201f);
   margin-right: 32rpx;
+}
+
+.theme-card-info .button .buttonIcon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 12rpx;
 }
 
 .theme-card-info .button > text {

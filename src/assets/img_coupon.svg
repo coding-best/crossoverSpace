@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="113px" height="86px" viewBox="0 0 113 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>img_coupon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="120" height="120"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="C1_个人中心" transform="translate(-233.000000, -416.000000)">
+            <g id="Group-5" transform="translate(14.000000, 382.000000)">
+                <g id="img_coupon" transform="translate(217.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask" fill-rule="nonzero"></g>
+                    <g id="Group-2" mask="url(#mask-2)">
+                        <g transform="translate(58.000000, 87.500000) rotate(90.000000) translate(-58.000000, -87.500000) translate(8.000000, 34.000000)">
+                            <path d="M100,65.9555034 L100,98.0115765 C100,102.429855 96.418278,106.011577 92,106.011577 L8,106.011577 C3.581722,106.011577 5.41083001e-16,102.429855 0,98.0115765 L0,65.9555034 C6.15953052,65.4050066 11,59.8148858 11,53 C11,46.1851142 6.15953052,40.5949934 1.03511644e-12,40.0444966 L0,8.01157653 C-5.41083001e-16,3.59329854 3.581722,0.0115765339 8,0.0115765339 L92,0.0115765339 C96.418278,0.0115765339 100,3.59329854 100,8.01157653 L100,40.0444966 C93.8404695,40.5949934 89,46.1851142 89,53 C89,59.8148858 93.8404695,65.4050066 100,65.9555034 Z" id="Rectangle" stroke="#EEEEEE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero"></path>
+                            <g id="Group-3" stroke="none" stroke-width="1" fill-rule="evenodd" transform="translate(34.000000, 19.000000)" stroke-linecap="square">
+                                <path d="M1,20 L1,28" id="Line-2" stroke="#EEEEEE" stroke-width="6" fill-rule="nonzero"></path>
+                                <path d="M1,0 L1,8" id="Line-2-Copy-4" stroke="#EEEEEE" stroke-width="6" fill-rule="nonzero"></path>
+                                <path d="M1,40 L1,48" id="Line-2-Copy" stroke="#EEEEEE" stroke-width="6" fill-rule="nonzero"></path>
+                                <path d="M1,60 L1,68" id="Line-2-Copy-2" stroke="#EEEEEE" stroke-width="6" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

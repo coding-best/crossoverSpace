@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="106px" height="95px" viewBox="0 0 106 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>img_booking</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="120" height="120"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="C3_我的预约" transform="translate(-238.000000, -113.000000)">
+            <g id="Group-4" transform="translate(14.000000, 88.000000)">
+                <g id="img_booking" transform="translate(217.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask" fill-rule="nonzero"></g>
+                    <g id="Group" mask="url(#mask-2)" fill-rule="nonzero" stroke="#FF7D12" stroke-linecap="round" stroke-width="6">
+                        <g transform="translate(10.000000, 28.000000)">
+                            <rect id="Rectangle" stroke-linejoin="round" x="0" y="11" width="100" height="92" rx="8"></rect>
+                            <path d="M29.5,0.5 L29.5,22.5" id="Line"></path>
+                            <path d="M71.25,0.5 L71.25,22.5" id="Line-Copy"></path>
+                            <path d="M66.0839666,33.3018074 L66.0839666,75.3018074 C66.0839666,78.6155159 63.3976751,81.3018074 60.0839666,81.3018074 C52.2776029,81.3018074 46.4228301,81.3018074 42.5196482,81.3018074" id="Rectangle-2" stroke-linejoin="round" transform="translate(54.301807, 57.301807) rotate(45.000000) translate(-54.301807, -57.301807) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

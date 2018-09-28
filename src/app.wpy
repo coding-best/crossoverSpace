@@ -28,6 +28,8 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/mineBooking',
+      'pages/mineInfo',
       'pages/activityDetail',
       'pages/venueBooking',
       'pages/venueIsIntro',
@@ -46,18 +48,18 @@ export default class extends wepy.app {
       'list': [{
         'pagePath': 'pages/home',
         'text': '场馆预约',
-        iconPath: 'assets/icon_home.png',
-        selectedIconPath: 'assets/icon_home.png'
+        iconPath: 'assets/tab_booking_normal.png',
+        selectedIconPath: 'assets/tab_booking_select.png'
       }, {
         'pagePath': 'pages/activity',
         'text': '活动列表',
-        iconPath: 'assets/icon_activity.png',
-        selectedIconPath: 'assets/icon_activity.png'
+        iconPath: 'assets/tab_list_normal.png',
+        selectedIconPath: 'assets/tab_list_select.png'
       }, {
         'pagePath': 'pages/mine',
         'text': '个人中心',
-        iconPath: 'assets/icon_mine.png',
-        selectedIconPath: 'assets/icon_mine.png'
+        iconPath: 'assets/tab_me_normal.png',
+        selectedIconPath: 'assets/tab_me_select.png'
       }],
       backgroundColor: '#FFF',
       color: '#666666',
