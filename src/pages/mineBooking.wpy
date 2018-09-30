@@ -11,6 +11,24 @@
         </view>
       </block>
     </view>
+
+    <!-- 预约的项目 -->
+    <view class="project">
+      <block wx:for="{{projectItem}}" wx:key="{{index}}">
+        <view class="project-item" @tap="hrefMineBookingDetail">
+          <image class="project-item-image" src="{{item.img}}" mode="aspectFill"></image>
+          <view class="project-item-content">
+            <text>{{item.name}}</text>
+            <text>{{item.time}}</text>
+            <text>{{item.address}}</text>
+          </view>
+          <view class="project-item-status {{item.status == 1 || item.status == 2 ? 'orange' : 'green'}}">
+            <text>{{item.statusName}}</text>
+          </view>
+        </view>
+        <view class="row"></view>
+      </block>
+    </view>
   </view>
 </template>
 <script>
@@ -39,13 +57,46 @@ export default class Index extends wepy.page {
     }, {
       status: '已完成',
       number: '2'
+    }],
+    projectItem: [{
+      name: '拔刀道',
+      time: '2018-09-10 18:00-19:00',
+      address: '科技园 龙珠四路金谷创业园F栋',
+      status: '1',
+      statusName: '待付款',
+      img: '../assets/img_jidao.png'
+    }, {
+      name: '白尾鹿舞蹈工作室',
+      time: '2018-09-10  18:00-19:00',
+      address: '科技园 龙珠四路金谷创业园F栋',
+      status: '4',
+      statusName: '已完成',
+      img: '../assets/img_bwl.png'
+    }, {
+      name: '博昇攀岩',
+      time: '2018-09-10  18:00-19:00',
+      address: '科技园 龙珠四路金谷创业园F栋',
+      status: '2',
+      statusName: '待开始',
+      img: '../assets/img_pangyan.png'
+    }, {
+      name: '待开始',
+      time: '2018-09-10  18:00-19:00',
+      address: '科技园 龙珠四路金谷创业园F栋',
+      status: '3',
+      statusName: '使用中',
+      img: '../assets/img_mgg.png'
     }]
   }
   cutomFunction() {
 
   }
   methods = {
-
+    hrefMineBookingDetail() {
+      wepy.navigateTo({
+        url: './mineBookingDetail'
+      })
+    }
   }
   onLoad() {
     this.cutomFunction()
@@ -109,12 +160,79 @@ export default class Index extends wepy.page {
   height: 6rpx;
   border-radius: 30%;
   color: #fff;
-  background-color: #FFF;
+  background-color: #fff;
   margin-top: 14rpx;
   opacity: 0;
 }
 
 .activeBooking {
   opacity: 1;
+}
+
+.project {
+  padding: 0 32rpx;
+  width: 686rpx;
+  margin-top: 32rpx;
+}
+
+.project-item {
+  display: flex;
+  margin-top: 40rpx;
+  margin-bottom: 46rpx;
+}
+
+.project-item-image {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 16rpx;
+}
+
+.project-item-content {
+  width: 400rpx;
+  margin-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item-content > text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+}
+
+.project-item-content > text:first-child {
+  font-size: 32rpx;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 6rpx;
+  margin-bottom: 10rpx;
+}
+
+.project-item-content > text:last-child {
+  margin-top: 4rpx;
+}
+
+.project-item-status > text {
+  color: rgba(255, 121, 31, 1);
+  font-size: 26rpx;
+}
+
+.row {
+  width: 686rpx;
+  height: 2rpx;
+  background-color: #EEE;
+}
+
+.row:last-of-type {
+  opacity: 0;
+}
+
+.orange > text {
+  color: #FF791F; 
+}
+
+.green > text {
+  color: #2DCFAF;
 }
 </style>

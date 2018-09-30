@@ -1,0 +1,171 @@
+<template>
+  <view class="container">
+    <view class="content">
+      <view class="header">
+        <image class="header-image" src="../assets/img_bwl.png" mode="aspectFill"></image>
+        <view class="header-title">
+          <text>白尾鹿舞蹈工作室</text>
+          <text>已完成</text>
+        </view>
+      </view>
+
+      <view class="detail">
+        <view class="detail-item">
+          <text>预约时间</text>
+          <text>2018-09-10 18:00-19:00</text>
+        </view>
+        <view class="detail-item">
+          <text>地点</text>
+          <text>科技园 龙珠四路金谷创业园F栋</text>
+        </view>
+        <view class="detail-item">
+          <text>原价</text>
+          <text>300元</text>
+        </view>
+        <view class="detail-item">
+          <text>优惠券</text>
+          <text>-200元</text>
+        </view>
+        <view class="detail-item">
+          <text>合计:</text>
+          <text>100 元</text>
+        </view>
+      </view>
+
+      <view class="evaluate">
+        <textarea value="" placeholder="请输入您的评价" placeholderClass="placeholder"></textarea>
+      </view>
+
+      <view class="button">
+        <text>保存</text>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class MineBookingDetail extends wepy.page {
+  config = {
+    navigationBarTitleText: '预约详情'
+  }
+  components = {
+
+  }
+  data = {
+
+  }
+  cutomFunction() {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+    this.cutomFunction()
+  }
+}
+</script>
+<style>
+page {
+  background-color: #f4f4f4;
+}
+
+.content {
+  margin: 0 auto;
+  margin-top: 48rpx;
+  width: 686rpx;
+  height: 1302rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 4rpx 16rpx 32rpx -8rpx rgba(70, 21, 21, 0.2);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 48rpx;
+  padding-top: 72rpx;
+  padding-bottom: 48rpx;
+  border-bottom: 2rpx dashed #ece8e8;
+}
+
+.header-image {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 16rpx;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header-title > text:first-child {
+  color: rgba(51, 51, 51, 1);
+  font-size: 32rpx;
+}
+
+.header-title > text:last-child {
+  color: #2dcfaf;
+  font-size: 26rpx;
+  margin-top: 60rpx;
+}
+
+.detail {
+  padding: 48rpx;
+  border-bottom: 2rpx dashed #ece8e8;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-item > text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(125, 125, 125, 1);
+  font-size: 26rpx;
+  margin-bottom: 48rpx;
+}
+.detail-item > text:last-child {
+  color: rgba(0, 0, 0, 1);
+  font-size: 26rpx;
+  text-align: right;
+}
+
+.evaluate {
+  padding: 48rpx;
+}
+
+textarea {
+  border: 2rpx solid #eeeeee;
+  border-radius: 16rpx;
+  width: 482rpx;
+  height: 210rpx;
+  padding: 28rpx 54rpx;
+}
+
+.placeholder {
+  color: rgba(187, 187, 187, 1);
+  font-size: 26rpx;
+}
+
+.button {
+  width: 590rpx;
+  height: 88rpx;
+  border-radius: 48rpx;
+  background-image: linear-gradient(to left, #ff5f1f, #ff791f);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button > text {
+  line-height: 88rpx;
+  color: #FFF;
+}
+</style>
