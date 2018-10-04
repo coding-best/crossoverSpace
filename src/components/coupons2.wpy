@@ -103,7 +103,7 @@ export default class Coupons extends wepy.component {
 .circle {
   position: absolute;
   height: 236rpx;
-  left: 173rpx;
+  left: 182rpx;
   top: -18rpx;
   display: flex;
   flex-direction: column;
@@ -125,6 +125,7 @@ export default class Coupons extends wepy.component {
   height: 36rpx;
   margin-bottom: 10rpx;
   border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+  background-color: #f4f4f4;
 }
 
 .circle view:last-child {
@@ -132,5 +133,6 @@ export default class Coupons extends wepy.component {
   height: 36rpx;
   border-top: 1rpx solid rgba(238, 238, 238, 1);
   margin-top: 10rpx;
+  background-color: #f4f4f4;
 }
 </style>

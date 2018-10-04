@@ -1,4 +1,4 @@
-let city_data = {
+let citydata = {
   '广州市': [
     '越秀区',
     '荔湾区',
@@ -99,7 +99,7 @@ let city_data = {
 }
 
 export function getCity() {
-  return city_data
+  return citydata
 }
 
 // exports default getCity

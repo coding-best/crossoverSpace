@@ -1,15 +1,15 @@
 import BaseProxy from './baseProxy'
 
-class RegionsProxy extends BaseProxy {
+class StadiumsProxy extends BaseProxy {
   constructor(parameters = {}) {
-    super('regions', parameters)
+    super('stadiums', parameters)
   }
 
-  async Regions() {
+  async Stadiums() {
     const data = {}
     const ret = await this.submit('get', `${this.endpoint}/`, data)
     return ret.data
   }
 }
 
-export default RegionsProxy
+export default StadiumsProxy

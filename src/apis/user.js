@@ -17,7 +17,7 @@ async function checkLogin() {
 global.checkLogin = checkLogin
 
 async function doLogin() {
-  try {  
+  try {
     const { code } = await wepy.login()
     if (!code) throw new Error('Cannot fetch login code.')
 

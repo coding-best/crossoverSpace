@@ -1,7 +1,7 @@
 <template>
   <view class="time">
     <block wx:for="{{time}}" wx:key="{{index}}">
-      <view class="time-item {{index == activeTime ? 'activeTime' : ''}}">
+      <view class="time-item {{index == activeTime ? 'activeTime' : ''}}" @tap="chooseTime({{index}})">
         <text>{{item.section}}</text>
       </view>
     </block>
@@ -33,14 +33,12 @@ export default class Time extends wepy.component {
       section: '10:00-12:00'
     }]
   }
-  cutomFunction() {
-
-  }
   methods = {
-
+    chooseTime(index) {
+      this.activeTime = index
+    }
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>
@@ -70,6 +68,16 @@ export default class Time extends wepy.component {
 
 .activeTime {
   background-image: linear-gradient(to right, #ff541f, #ff201f);
+  animation: opacity .4s ease;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .activeTime > text {

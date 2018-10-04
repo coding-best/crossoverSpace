@@ -18,12 +18,12 @@
       </view>
       <view class="introduce-content">
         <text>提供豐富的舞蹈教學，每月超過三百堂多樣化課程、數十種舞蹈風格，最多元的課程選擇、由淺入深漸進...</text>
-        <view class="right"></view>
+        <image class="right" src="../assets/icon_arrow.svg"></image>
       </view>
       <view class="introduce-address">
         <image class="icon" src="../assets/icon_location.svg"></image>
         <text>科技园 龙珠四路金谷创业园F栋, 1.6 km</text>
-        <view class="right"></view>
+        <image class="right" src="../assets/icon_arrow.svg"></image>
       </view>
     </view>
 
@@ -55,7 +55,7 @@
         <text>优惠券</text>
         <view class="coupons-title-right">
           <text>选择优惠券</text>
-          <view class="right"></view>
+          <image class="right" src="../assets/icon_arrow.svg"></image>
         </view>
       </view>
       <Coupons />
@@ -88,14 +88,10 @@ export default class VenueBooking extends wepy.page {
       { url: '../assets/img_jidao.png' }
     ]
   }
-  cutomFunction() {
-
-  }
   methods = {
 
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>
@@ -148,9 +144,13 @@ swiper image {
 
 .introduce-content {
   margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .introduce-content > text {
+  width: 650rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -166,6 +166,8 @@ swiper image {
   flex-direction: row;
   justify-content: flex-start;
   margin-top: 32rpx;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .introduce-address .icon {
@@ -183,6 +185,7 @@ swiper image {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  margin-left: -220rpx;
 }
 
 .attention {
@@ -222,10 +225,21 @@ swiper image {
   text-align: left;
 }
 
+.coupons-title-right {
+  display: flex;
+  align-items: center;
+}
+
 .coupons-title-right > text {
   color: rgba(125, 125, 125, 1);
   font-size: 26rpx;
   text-align: left;
   align-items: center;
+  margin-right: 20rpx;
+}
+
+.right {
+  width: 8rpx;
+  height: 24rpx;
 }
 </style>

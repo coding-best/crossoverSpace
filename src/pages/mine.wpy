@@ -7,7 +7,7 @@
         <text>吴彦祖</text>
         <text>快留下你的个性签名吧~</text>
       </view>
-      <view class="right"></view>
+      <image class="right" src="../assets/icon_arrow.svg"></image>
     </view>
 
     <!-- 我的预约卡片 -->
@@ -20,7 +20,7 @@
     </view>
 
     <!-- 优惠券卡片 -->
-    <view class="coupons">
+    <view class="coupons" @tap="hrefMineCoupons">
       <view class="coupons-mine">
         <text>优惠券</text>
         <text>6</text>
@@ -42,9 +42,6 @@ export default class Mine extends wepy.page {
   data = {
 
   }
-  cutomFunction() {
-
-  }
   methods = {
     hrefMineInfo() {
       wepy.navigateTo({
@@ -56,10 +53,15 @@ export default class Mine extends wepy.page {
       wepy.navigateTo({
         url: './mineBooking'
       })
+    },
+
+    hrefMineCoupons() {
+      wepy.navigateTo({
+        url: './mineCoupon'
+      })
     }
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>
@@ -178,5 +180,12 @@ page {
   position: absolute;
   bottom: -28rpx;
   right: 20rpx;
+}
+
+.right {
+  position: absolute;
+  right: 64rpx;
+  width: 8rpx;
+  height: 24rpx;
 }
 </style>

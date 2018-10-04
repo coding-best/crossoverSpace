@@ -18,6 +18,8 @@ import wepy from 'wepy'
 import 'wepy-async-function'
 
 import userApi from './apis/user.js'
+import regionsApi from './apis/regions.js'
+import stadiumsApi from './apis/stadiums.js'
 
 import { setStore } from 'wepy-redux'
 import configStore from './store'
@@ -29,7 +31,7 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/home',
-      'pages/MineCoupons',
+      'pages/mineCoupon',
       'pages/mineBookingDetail',
       'pages/mineBooking',
       'pages/mineInfo',
@@ -81,6 +83,8 @@ export default class extends wepy.app {
 
   async onLaunch() {
     await userApi.doLogin()
+    await regionsApi.getRegions()
+    await stadiumsApi.getStadiums()
   }
 }
 </script>

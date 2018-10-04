@@ -1,4 +1,4 @@
-const ApiRootUrl = 'http://127.0.0.1:9000/api'
+const ApiRootUrl = 'https://www.fshuitai.com/gc_server/api'
 
 module.exports = {
   ApiRootUrl

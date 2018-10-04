@@ -18,6 +18,7 @@
     <view class="theme">
       <view class="theme-card" wx:for="{{themeCard}}" wx:key="index" @tap="hrefVenueIsIntro">
         <image class="theme-card-img" src="{{item.url}}" mode="aspectFill"></image>
+        <view class="dreamLayer"></view>
         <view class="theme-card-info">
           <view class="title">
             <text>{{item.name}}</text>
@@ -143,7 +144,7 @@ swiper image {
 }
 
 .theme-card {
-  left: 28rpx;
+  position: relative;
   width: 694rpx;
   height: 332rpx;
   border-radius: 16rpx;
@@ -152,19 +153,28 @@ swiper image {
 }
 
 .theme-card-img {
-  width: 100%;
-  height: 190rpx;
-  // background-image: url('https://ofdznzfo9.qnssl.com/rmall_swiper5.png');
-  // background-size: 100%;
-  // background-repeat: no-repeat;
-  border-radius: 16rpx 16rpx 0 0;
+  width: 694rpx;
+  height: 332rpx;
+  border-radius: 16rpx;
+}
+
+.dreamLayer {
+  position: absolute;
+  width: 694rpx;
+  height: 332rpx;
+  border-radius: 16rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
 }
 
 .theme-card-info {
+  position: absolute;
+  width: 100%;
   height: 122rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  bottom: 18rpx;
 }
 .theme-card-info .title {
   display: flex;
@@ -172,13 +182,14 @@ swiper image {
   margin-left: 24rpx;
 }
 .theme-card-info .title > text:first-child {
-  color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
   font-size: 32rpx;
   text-align: left;
   margin-bottom: 10rpx;
+  font-weight: 500;
 }
 .theme-card-info .title > text:last-child {
-  color: rgba(187, 187, 187, 1);
+  color: rgba(255, 255, 255, 1);
   font-size: 24rpx;
   text-align: left;
 }
@@ -195,9 +206,9 @@ swiper image {
 }
 
 .theme-card-info .button .buttonIcon {
-    width: 32rpx;
-    height: 32rpx;
-    margin-right: 12rpx;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
 }
 
 .theme-card-info .button > text {

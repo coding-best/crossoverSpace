@@ -1,0 +1,93 @@
+<template>
+  <view class="container">
+    <Drawer />
+
+    <!-- 输入兑换码 -->
+    <view class="conversion-code">
+      <input class="conversion-code-input" type="text" value="" placeholder="请输入优惠券码" placeholderClass="placeholder">
+      <view class="conversion-code-button">
+        <text>兑换</text>
+      </view>
+    </view>
+
+    <!-- 兑换码 -->
+    <Coupons />
+    <Coupons />
+    <Coupons />
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import Drawer from '../components/drawer'
+import Coupons from '../components/coupons2'
+
+export default class MineCoupon extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的优惠券'
+  }
+  components = {
+    Drawer,
+    Coupons
+  }
+  data = {
+
+  }
+  methods = {
+
+  }
+  onLoad() {
+  }
+}
+</script>
+<style>
+page {
+  background-color: #f4f4f4;
+}
+
+.conversion-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 686rpx;
+  height: 88rpx;
+  border-radius: 48rpx;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 136rpx;
+  margin-bottom: 60rpx;
+}
+
+.conversion-code-input {
+  width: 450rpx;
+  color: #333333;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  height: 88rpx;
+  margin-left: 40rpx;
+}
+
+.placeholder {
+  color: #bbbbbb;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  height: 88rpx;
+  /* margin-left: 40rpx; */
+}
+
+.conversion-code-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+  height: 55rpx;
+  border-radius: 28rpx;
+  background-image: linear-gradient(to right, #ff541f, #ff201f);
+  margin-right: 16rpx;
+}
+
+.conversion-code-button > text {
+  color: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  line-height: 45rpx;
+}
+</style>

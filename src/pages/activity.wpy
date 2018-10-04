@@ -44,9 +44,6 @@ export default class Activity extends wepy.page {
       content: '其实，每个人都可以享受“车”带给你的乐趣。哪怕你还不太懂车，哪怕你还没有自己的车，哪怕你的车不值什…'
     }]
   }
-  cutomFunction() {
-
-  }
   methods = {
     hrefActivityDetail: function () {
       wepy.navigateTo({
@@ -55,7 +52,6 @@ export default class Activity extends wepy.page {
     }
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>

@@ -88,9 +88,6 @@ export default class Index extends wepy.page {
       img: '../assets/img_mgg.png'
     }]
   }
-  cutomFunction() {
-
-  }
   methods = {
     hrefMineBookingDetail() {
       wepy.navigateTo({
@@ -99,7 +96,6 @@ export default class Index extends wepy.page {
     }
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>

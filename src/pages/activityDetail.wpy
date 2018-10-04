@@ -5,7 +5,7 @@
       <swiper duration="{{duration}}" current="{{swiperCurrent}}" autoplay="true" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#FFFFFF">
         <block wx:for="{{bannerArr}}" wx:key="index">
           <swiper-item data-index="{{index}}" @tap="tapImg">
-            <image src="{{item.url}}" class="slide_image" mode="widthFix" />
+            <image src="{{item.url}}" class="slide_image" mode="aspectFill" />
           </swiper-item>
         </block>
       </swiper>
@@ -59,14 +59,10 @@ export default class ActivityDetail extends wepy.page {
       { url: '../assets/img_jidao.png' }
     ]
   }
-  cutomFunction() {
-
-  }
   methods = {
 
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>

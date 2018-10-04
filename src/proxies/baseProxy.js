@@ -3,6 +3,7 @@ import { ApiRootUrl } from '../utils/constant'
 
 class BaseProxy {
   constructor(endpoint, parameters = {}) {
+    console.log(endpoint)
     this.endpoint = endpoint
     this.parameters = parameters
   }
@@ -52,7 +53,7 @@ class BaseProxy {
       method: requestType,
       header: {
         'Content-Type': 'application/json',
-        'Authorization': `JWT ${wepy.getStorageSync('token')}`,
+        'Authorization': `JWT ${wepy.getStorageSync('token')}`
       }
     })
 

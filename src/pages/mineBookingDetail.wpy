@@ -54,14 +54,10 @@ export default class MineBookingDetail extends wepy.page {
   data = {
 
   }
-  cutomFunction() {
-
-  }
   methods = {
 
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>

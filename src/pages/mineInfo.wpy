@@ -16,17 +16,17 @@
       <view class="infoEditor">
         <text>生日</text>
         <input class="infoEditor-input" value="" placeholder="点击填写" placeholderClass="placeholder" />
-        <image class="infoEditor-icon" src=""></image>
+        <image class="infoEditor-icon2" src="../assets/icon_arrow.svg"></image>
       </view>
       <view class="infoEditor">
         <text>身高</text>
         <input class="infoEditor-input" value="" placeholder="点击填写" placeholderClass="placeholder" />
-        <image class="infoEditor-icon" src=""></image>
+        <image class="infoEditor-icon2" src="../assets/icon_arrow.svg"></image>
       </view>
       <view class="infoEditor">
         <text>体重</text>
         <input class="infoEditor-input" value="" placeholder="点击填写" placeholderClass="placeholder" />
-        <image class="infoEditor-icon" src=""></image>
+        <image class="infoEditor-icon2" src="../assets/icon_arrow.svg"></image>
       </view>
     </view>
 
@@ -47,14 +47,10 @@ export default class MineInfo extends wepy.page {
   data = {
 
   }
-  cutomFunction() {
-
-  }
   methods = {
 
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>
@@ -105,11 +101,15 @@ export default class MineInfo extends wepy.page {
   height: 26rpx;
 }
 
+.infoEditor-icon2 {
+  width: 8rpx;
+  height: 24rpx;
+}
 .infoEditor-input {
   font-size: 26rpx;
   color: #333333;
   text-align: right;
-  width: 500rpx;
+  width: 520rpx;
 }
 
 .placeholder {

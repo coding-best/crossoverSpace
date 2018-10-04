@@ -63,9 +63,6 @@ export default class VenuelsIntro extends wepy.page {
   data = {
 
   }
-  cutomFunction() {
-
-  }
   methods = {
     hrefVenueBooking() {
       wepy.navigateTo({
@@ -74,7 +71,6 @@ export default class VenuelsIntro extends wepy.page {
     }
   }
   onLoad() {
-    this.cutomFunction()
   }
 }
 </script>
